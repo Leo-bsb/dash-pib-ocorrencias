@@ -33,19 +33,23 @@ tab_tabelas, tab_graficos, tab_modelos = st.tabs(["📋 Tabelas", "📊 Gráfico
 # Aba de Tabelas
 # =============================
 with tab_tabelas:
+
+
+    st.markdown("""
+    **Contexto:**  
+    - O objetivo desta pesquisa foi entender a relação entre o desenvolvimento econômico de um município e a crimininalidade, a fim de conseguir estimar se é possível reduzir a criminalidade de uma comunidade a partir de recursos financeiros estatais.
+    - A base de criminalidade obtida foi a `Ocorrência`, que registra crimes nas regiões da RIDE/DF do site DataIESB, originada do Sistema Nacional de Informações de Segurança Pública (SINESP).  
+    - A base de economia obtida foi a `PIB_municipio`, do site DataIESB, que fornece indicadores econômicos municipais.  
+    - A base `Censo_2022` do DataIESB foi usada como apoio para obter o total da população, permitindo calcular taxas normalizadas de criminalidade.  
+    """)
+
+    
     st.header("Visualização dos Dados")
     st.dataframe(df)
 
     st.header("Estatísticas Descritivas")
     st.write(df.describe())
 
-    st.markdown("""
-    **Contexto:**  
-    - A base `Ocorrência` registra crimes nas regiões da RIDE/DF.  
-    - A base `PIB_municipio` fornece indicadores econômicos municipais.  
-    - A base `Censo_2022` foi usada para obter o total da população, permitindo calcular taxas normalizadas de criminalidade.  
-    - O objetivo é analisar a relação entre desempenho econômico e criminalidade.
-    """)
 
 # =============================
 # Aba de Gráficos
